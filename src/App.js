@@ -96,6 +96,7 @@ class App extends Component {
             <option>Parisian Nights</option>
           </select>
         </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </div>
     )
     
