@@ -14,6 +14,21 @@ class App extends Component {
     }
   }
 
+  getRandomIntInclusive = (max) => {
+    const min = 0
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  generateGirl = (e) => {
+    const randomIndex = this.getRandomIntInclusive(this.state.results.length)
+    const randomGirl = this.state.results[randomIndex]
+    this.setState({
+      girl: randomGirl.girl,
+      picture: randomGirl.picture,
+      reason: randomGirl.reason
+    })
+  }
+
   componentDidMount(){
     fetch('https://young-anchorage-78332.herokuapp.com/data')
     .then(response => response.json())
@@ -106,3 +121,9 @@ class App extends Component {
 
 
 export default App;
+
+
+
+
+
+
